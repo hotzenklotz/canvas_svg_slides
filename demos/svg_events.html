@@ -1,0 +1,27 @@
+<html>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+  <body>
+
+    <svg width="960" height="500" style="fill: darkgrey">
+      <g>
+        <circle class="button" cx="150" cy="50" r="50" data-hpi="20"></circle>
+        <circle class="button" cx="250" cy="25" r="20" data-hpi="30"></circle>
+      </g>
+    </svg>
+
+  <script>
+
+    $(document).ready( function() {
+
+      $(".button").on("click", function(evt){
+
+        var $this = $(this)
+        var radius = $this.data("hpi");
+        $this.attr("r", radius)
+      })
+    }
+  )
+
+  </script>
+  </body>
+</html>

@@ -1,0 +1,30 @@
+
+
+<html>
+  <body style="text-align:center">
+    <canvas id="myCanvas" width="200" height="300"></canvas>
+  </body>
+  <script type="text/javascript">
+  var ctx = document.getElementById('myCanvas').getContext('2d');
+
+  var img = new Image();
+  img.onload = function(){
+
+    ctx.drawImage(img, 0, 0, 150, 120);
+    var imgData=ctx.getImageData(0, 0, img.width, img.height);
+
+    for (var i=0;i<imgData.data.length;i+=4)
+      {
+      imgData.data[i]=255-imgData.data[i];
+      imgData.data[i+1]=255-imgData.data[i+1];
+      imgData.data[i+2]=255-imgData.data[i+2];
+      imgData.data[i+3]=255;
+      }
+
+    ctx.putImageData(imgData,0,0);
+
+  };
+
+  img.src = '../images/presentation/html5rocks.png';
+  </script>
+</html>

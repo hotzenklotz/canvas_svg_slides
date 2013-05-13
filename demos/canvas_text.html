@@ -1,0 +1,19 @@
+<html>
+  <body style="text-align:center">
+    <canvas id="myCanvas"></canvas>
+  </body>
+  <script type="text/javascript">
+  var ctx = document.getElementById('myCanvas').getContext('2d');
+
+  ctx.shadowOffsetX = 2;
+  ctx.shadowOffsetY = 2;
+  ctx.shadowBlur = 2;
+  ctx.shadowColor = "rgba(0, 0, 0, 0.5)";
+
+  ctx.font = "20px Times New Roman";
+  ctx.fillStyle = "blue";
+  ctx.fillText("Hallo Welt", 5, 30);
+  ctx.fillText("@WWWW Themen", 5, 60);
+
+  </script>
+</html>

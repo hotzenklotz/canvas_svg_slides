@@ -1,0 +1,1031 @@
+<!--
+Google IO 2012/2013 HTML5 Slide Template
+
+Authors: Eric Bidelman <ebidel@gmail.com>
+         Luke Mahé <lukem@google.com>
+
+URL: https://code.google.com/p/io-2012-slides
+-->
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <!--<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">-->
+  <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+  <!--This one seems to work all the time, but really small on ipad-->
+  <!--<meta name="viewport" content="initial-scale=0.4">-->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="stylesheet" media="all" href="theme/css/default.css">
+  <link rel="stylesheet" media="all" href="theme/css/custom.css">
+  <link rel="stylesheet" media="only screen and (max-device-width: 480px)" href="theme/css/phone.css">
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->
+  <script data-main="js/slides" src="js/require-1.0.8.min.js"></script>
+</head>
+<body style="opacity: 0">
+
+<slides class="layout-widescreen">
+
+  <slide class="title-slide segue nobackground">
+    <aside class="gdbar"><img src="images/hpi_logo.png"></aside>
+    <!-- The content of this hgroup is replaced programmatically through the slide_config.json. -->
+    <hgroup class="auto-fadein">
+      <h1 data-config-title><!-- populated from slide_config.json --></h1>
+      <h2 data-config-subtitle><!-- populated from slide_config.json --></h2>
+      <p data-config-presenter><!-- populated from slide_config.json --></p>
+    </hgroup>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Themen</h2>
+    </hgroup>
+    <article>
+      <ul>
+        <li>HTML 5</li>
+        <li>Canvas</li>
+          <ul>
+            <li>Methoden</li>
+            <li>Live Hacking</li>
+            <li>Bibliotheken</li>
+          </ul>
+        </li>
+        <li>SVG</li>
+          <ul>
+            <li>DOM Integration</li>
+            <li>Live Hacking</li>
+            <li>Bibliotheken</li>
+          </ul>
+        <li>Aussicht</li>
+        <li>Browser Kompatibilität</li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide class="segue nobackground" style="background: url(http://www.w3.org/html/logo/downloads/HTML5_Badge_256.png) no-repeat center center; background-color: #515151;">
+    <aside class="gdbar"><img src="images/hpi_logo.png"></aside>
+    <hgroup>
+      <h2>HTML 5</h2>
+      <h3>Ein neuer Standard</h3>
+    </hgroup>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>HTML 5</h2>
+    </hgroup>
+    <article class="">
+      <p>W3C Candidate Recommendation (Dezember 2012)</p>
+
+      <h3 class="html5_header">3D, Grafik &amp; Effekte</h3>
+      <ul style="padding-left: 70px;">
+        <li>CSS 3D</li>
+        <li>WebGL</li>
+        <li>SVG</li>
+        <li>Canvas</li>
+      </ul>
+
+      <h3 class="html5_header" style="background-image: url(./images/presentation/HTML5_Styling_64.png)">Styling</h3>
+      <ul style="padding-left: 70px;">
+        <li>CSS 3</li>
+      </ul>
+
+      <h3 class="html5_header" style="background-image: url(./images/presentation/HTML5_Connectivity_64.png)">Konnektivität</h3>
+      <ul style="padding-left: 70px;">
+        <li>Web Sockets</li>
+        <li>Offline / Online Recognition</li>
+      </ul>
+
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>HTML 5</h2>
+    </hgroup>
+    <article class="">
+      <h3 class="html5_header" style="background-image: url(./images/presentation/HTML5_Offline_Storage_64.png)">Offline &amp; Speichern</h3>
+      <ul style="padding-left: 70px;">
+        <li>App Cache</li>
+        <li>Local Storage</li>
+        <li>Indexed DB</li>
+        <li>File API</li>
+      </ul>
+
+      <h3 class="html5_header" style="background-image: url(./images/presentation/HTML5_Device_Access_64.png)">Zugriff auf Geräteinformationen</h3>
+      <ul style="padding-left: 70px;">
+        <li>Sensordaten</li>
+        <li>Touch Events</li>
+        <li>Ton/Bild mittels WebRTC</li>
+      </ul>
+
+      <h3 class="html5_header" style="background-image: url(./images/presentation/HTML5_Multimedia_64.png)">Multimedia</h3>
+      <ul style="padding-left: 70px;">
+        <li>Audio</li>
+        <li>Video</li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>HTML 5</h2>
+    </hgroup>
+    <article class="">
+      <h3 class="html5_header" style="background-image: url(./images/presentation/HTML5_Performance_64.png)">Leistung</h3>
+      <ul style="padding-left: 70px;">
+        <li>WebWorker</li>
+        <li>XMLHttpRequest 2</li>
+      </ul>
+
+      <h3 class="html5_header" style="background-image: url(./images/presentation/HTML5_Semantics_64.png)">Semantik</h3>
+      <ul style="padding-left: 70px;">
+        <li>nav</li>
+        <li>header, footer</li>
+        <li>article, section</li>
+      </ul>
+
+    </article>
+  </slide>
+
+  <slide class="segue dark nobackground">
+    <aside class="gdbar"><img src="images/hpi_logo.png"></aside>
+    <hgroup>
+      <h2>Canvas</h2>
+      <h3>Zeichnen mit Pixelgrafiken</h3>
+    </hgroup>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Canvas</h2>
+    </hgroup>
+    <article>
+      <ul>
+        <li>Erzeugen und Manipulieren von Grafiken via Javascript</li>
+        <li>2D Grafik</li>
+        <li>3D Grafik</li>
+        <li></li>
+        <li>Hardwareunterstützung</li>
+        <li>Verfügbar auf Mobilgeräten</li>
+        <li>Anwendungsgebiete:</li>
+        <ul>
+          <li>Animationen</li>
+          <li>Bildbearbeitung</li>
+          <li>Spiele</li>
+        </ul>
+      </ul>
+      <img src="images/presentation/canvas_default_grid.png" alt="Canvas Grid" title="Canvas Grid" style="position: absolute; top: 25%; right: 300px;">
+      <footer class="source">Quelle: Mozilla Developer Network</footer>
+    </article>
+  </slide>
+
+  <slide class="hidden">
+    <hgroup>
+      <h2>Canvas</h2>
+      <h3>Primitive</h3>
+    </hgroup>
+    <article>
+      <ul>
+        <li>Rechtecke</li>
+        <li>Kreise</li>
+        <li>Linien</li>
+        <li>Bezierkurven</li>
+      </ul>
+
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Canvas</h2>
+      <h3>Primitive</h3>
+    </hgroup>
+    <article class="smaller">
+      <ul>
+        <li>fillRect(x,y,width,height)</li>
+        <li>strokeRect(x,y,width,height)</li>
+        <li>clearRect(x,y,width,height)</li>
+      </ul>
+      <pre class="prettyprint linenums" data-lang="javascript">
+function draw(){
+
+  var ctx = document.getElementById('myCanvas').getContext('2d');
+
+  ctx.fillRect(25,25,100,100);
+  ctx.clearRect(45,45,60,60);
+  ctx.strokeRect(50,50,50,50);
+} </pre>
+      <iframe seamless="true" data-src="./demos/canvas_rect.html"></iframe>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Canvas</h2>
+      <h3>Primitive</h3>
+    </hgroup>
+    <article class="smaller">
+      <ul>
+        <li>arc(x, y, radius, startAngle, endAngle, anticlockwise)</li>
+        <li>moveTo(x, y)</li>
+      </ul>
+      <pre class="prettyprint linenums" data-lang="javascript">
+function draw(){
+  var ctx = document.getElementById('myCanvas').getContext('2d');
+  ctx.beginPath();
+  ctx.arc(75,75,50,0,Math.PI*2,true); // Outer circle
+  ctx.moveTo(110,75);
+  ctx.arc(75,75,35,0,Math.PI,false);  // Mouth (clockwise)
+  ctx.moveTo(65,65);
+  ctx.arc(60,65,5,0,Math.PI*2,true);  // Left eye
+  ctx.moveTo(95,65);
+  ctx.arc(90,65,5,0,Math.PI*2,true);  // Right eye
+  ctx.stroke();
+}</pre>
+      <iframe seamless="true" data-src="./demos/canvas_arc.html" style="margin-top:-20px"></iframe>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Canvas</h2>
+      <h3>Primitive</h3>
+    </hgroup>
+    <article class="smaller">
+      <ul class="">
+        <li>beginPath()</li>
+        <li>lineTo(x, y)</li>
+        <li>closePath()</li>
+        <li>fill()</li>
+        <li>stroke()</li>
+      </ul>
+      <pre class="prettyprint linenums" data-lang="javascript">
+function draw(){
+  var ctx = document.getElementById('myCanvas').getContext('2d');
+  // Filled triangle
+  ctx.beginPath();
+  ctx.moveTo(25,25);
+  ctx.lineTo(105,25);
+  ctx.lineTo(25,105);
+  ctx.fill();
+}    </pre>
+      <iframe seamless="true" data-src="./demos/canvas_line.html" style="margin-top:-40px"></iframe>
+    </article>
+  </slide>
+
+  <slide class="hidden">
+    <hgroup>
+      <h2>Canvas</h2>
+      <h3>Primitive</h3>
+    </hgroup>
+    <article class="smaller">
+      <ul class="">
+        <li>quadraticCurveTo(cp1x, cp1y, x, y)</li>
+        <li>bezierCurveTo(cp1x, cp1y, cp2x, cp2y, x, y)</li>
+      </ul>
+      <pre class="prettyprint linenums" data-lang="javascript">
+function draw(){
+  var ctx = document.getElementById('myCanvas').getContext('2d');
+
+  ctx.beginPath();
+  ctx.moveTo(75,40);
+  ctx.bezierCurveTo(75,37,70,25,50,25);
+  ctx.bezierCurveTo(20,25,20,62.5,20,62.5);
+  ctx.bezierCurveTo(20,80,40,102,75,120);
+  ctx.bezierCurveTo(110,102,130,80,130,62.5);
+  ctx.bezierCurveTo(130,62.5,130,25,100,25);
+  ctx.bezierCurveTo(85,25,75,37,75,40);
+  ctx.fill();
+}
+</pre>
+      <iframe seamless="true" data-src="./demos/canvas_bezier.html" style="margin-top:-40px"></iframe>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Canvas</h2>
+      <h3>Farben</h3>
+    </hgroup>
+    <article class="smaller">
+      <ul class="">
+        <li>fillStyle = color</li>
+        <li>strokeStyle = color</li>
+      </ul>
+      <pre class="prettyprint linenums" data-lang="javascript">
+function draw() {
+  var ctx = document.getElementById('myCanvas').getContext('2d');
+  for (var i=0;i<6;i++){
+    for (var j=0;j<6;j++){
+      ctx.fillStyle = 'rgb(' + Math.floor(255-42.5*i) + ',' + Math.floor(255-42.5*j) + ',0)';
+      ctx.fillRect(j*25,i*25,25,25);
+    }
+  }
+}
+</pre>
+      <iframe seamless="true" data-src="./demos/canvas_fillstyle.html"></iframe>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Canvas</h2>
+      <h3>Text</h3>
+    </hgroup>
+    <article class="smaller">
+      <ul class="">
+        <li>fillText(String, x, y)</li>
+        <li>shadowColor = color </li>
+        <li>shadowBlur = integer</li>
+      </ul>
+      <pre class="prettyprint linenums" data-lang="javascript">
+function draw() {
+  var ctx = document.getElementById('myCanvas').getContext('2d');
+
+  ctx.shadowOffsetX = 2;
+  ctx.shadowOffsetY = 2;
+  ctx.shadowBlur = 2;
+  ctx.shadowColor = "rgba(0, 0, 0, 0.5)";
+
+  ctx.font = "20px Times New Roman";
+  ctx.fillStyle = "Blue";
+  ctx.fillText("Hallo Welt", 5, 30);
+  ctx.fillText("@Weiterführende WWW Themen", 5, 60);
+}
+</pre>
+      <iframe seamless="true" data-src="./demos/canvas_text.html"></iframe>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Canvas</h2>
+      <h3>Zustand</h3>
+    </hgroup>
+    <article class="smaller">
+      <ul class="">
+        <li>save()</li>
+        <li>restore()</li>
+      </ul>
+      <pre class="prettyprint linenums" data-lang="javascript">
+function draw() {
+  var ctx = document.getElementById('canvas').getContext('2d');
+
+  ctx.fillStyle = '#09F'       // Make changes to the settings
+  ctx.fillRect(15,15,120,120); // Draw a rectangle with new settings
+  ctx.save();                  // Save the current state
+
+  ctx.fillStyle = '#FFF'       // Make changes to the settings
+  ctx.globalAlpha = 0.5;
+  ctx.fillRect(30,30,90,90);   // Draw a rectangle with new settings
+
+  ctx.restore();               // Restore previous state
+  ctx.fillRect(45,45,60,60);   // Draw a rectangle with restored settings
+}</pre>
+      <iframe seamless="true" data-src="./demos/canvas_saverestore.html" style="margin-top: -40px;"></iframe>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Canvas</h2>
+      <h3>Translationen</h3>
+    </hgroup>
+    <article class="smaller">
+      <ul class="">
+        <li>tranlate(x,y)</li>
+        <li>rotate(angle)</li>
+        <li>scale(x,y)</li>
+        <li>transform(m11, m12, m21, m22, dx, dy)</li>
+      </ul>
+      <img src="./images/presentation/canvas_grid_translate.png" alt="Grid Translate">
+      <img src="./images/presentation/canvas_grid_rotate.png" alt="Grid Rotate">
+      <img src="./images/presentation/canvas_grid_transform.gif" alt="Grid Transform">
+      <footer class="source">Quelle: Mozilla Developer Network</footer>
+    </article>
+  </slide>
+
+  <slide>
+   <aside class="note">
+      <section>
+        <ul>
+          <li>Auch mit IMG Tag möglich!</li>
+        </ul>
+      </section>
+    </aside>
+    <hgroup>
+      <h2>Canvas</h2>
+      <h3>Bilder</h3>
+    </hgroup>
+    <article class="smaller">
+      <ul class="">
+        <li>drawImage(image, x, y)</li>
+      </ul>
+      <pre class="prettyprint linenums" data-lang="javascript">
+function draw() {
+  var ctx = document.getElementById('myCanvas').getContext('2d');
+
+  var img = new Image();
+  img.onload = function(){
+    ctx.drawImage(img, 0, 0);
+  };
+
+  img.src = './images/presentation/html5rocks.png';
+}</pre>
+      <iframe seamless="true" data-src="./demos/canvas_drawimage.html" style="margin-top: -40px;"></iframe>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Canvas</h2>
+      <h3>Bilder Skaliert</h3>
+    </hgroup>
+    <article class="smaller">
+      <ul class="">
+        <li>drawImage(image, x, y, width, height)</li>
+      </ul>
+      <pre class="prettyprint linenums" data-lang="javascript">
+function draw() {
+  var ctx = document.getElementById('myCanvas').getContext('2d');
+
+  var img = new Image();
+  img.onload = function(){
+    ctx.drawImage(img, 0, 0, 130, 100);
+  };
+
+  img.src = './images/presentation/html5rocks.png';
+}</pre>
+      <iframe seamless="true" data-src="./demos/canvas_drawimage2.html"></iframe>
+    </article>
+  </slide>
+
+  <slide>
+     <aside class="note">
+      <section>
+        <ul>
+          <li>Tafelbild!</li>
+          <li><img src="https://developer.mozilla.org/@api/deki/files/79/=Canvas_drawimage.jpg"></img></li>
+        </ul>
+      </section>
+    </aside>
+    <hgroup>
+      <h2>Canvas</h2>
+      <h3>Bilder Freistellen</h3>
+    </hgroup>
+    <article class="smaller">
+      <ul class="">
+        <li>drawImage(image, sx, sy, sWidth, sHeight, dx, dy, dWidth, dHeight)</li>
+      </ul>
+      <pre class="prettyprint linenums" data-lang="javascript">
+function draw() {
+  var ctx = document.getElementById('myCanvas').getContext('2d');
+
+  var img = new Image();
+  img.onload = function(){
+    ctx.drawImage(img, 120, 0, 100, 200, 120, 0, 100, 200);
+  };
+
+  img.src = '../images/presentation/html5rocks.png';
+}</pre>
+      <iframe seamless="true" data-src="./demos/canvas_drawimage3.html"></iframe>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Canvas</h2>
+      <h3>Bilder Manipulieren</h3>
+    </hgroup>
+    <article class="smaller">
+      <ul class="">
+        <li>getImageData(x, y, width, height)</li>
+        <li>putImageData(x, y)</li>
+      </ul>
+      <pre class="prettyprint linenums" data-lang="javascript">
+  img.onload = function(){
+    var imgData=ctx.getImageData(0, 0, img.width, img.height);
+
+    ctx.drawImage(img, 0, 0, 150, 120);
+    for (var i=0; i &lt; imgData.data.length; i+=4) {
+      imgData.data[i]   = 255 - imgData.data[i];
+      imgData.data[i+1] = 255 - imgData.data[i+1];
+      imgData.data[i+2] = 255 - imgData.data[i+2];
+      imgData.data[i+3] = 255;
+      }
+
+    ctx.putImageData(imgData, 0, 0);
+  };
+</pre>
+      <iframe seamless="true" data-src="./demos/canvas_getimagedata.html"></iframe>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Canvas</h2>
+      <h3>Weitere Features</h3>
+    </hgroup>
+    <article>
+      <ul>
+        <li>Line Style</li>
+        <li>Gradienten</li>
+        <li>Bezierkurven</li>
+        <li>Pattern</li>
+        <li>Bild Kompositionen</li>
+        <li>Transparenz</li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Canvas</h2>
+      <h3>Cheat Sheet</h3>
+    </hgroup>
+    <article>
+      <p>Quelle: http://blog.nihilogic.dk/2009/02/html5-canvas-cheat-sheet.html</p>
+      <a href="http://blog.nihilogic.dk/2009/02/html5-canvas-cheat-sheet.html">
+        <img src="http://www.nihilogic.dk/labs/canvas_sheet/HTML5_Canvas_Cheat_Sheet.png" alt="Canvas Cheat Sheet" title="Canvas Cheat Sheet"></a>
+
+    </article>
+  </slide>
+
+  <slide class="segue dark nobackground">
+    <aside class="gdbar"><img src="images/hpi_logo.png"></aside>
+    <hgroup>
+      <h2>Live Hacking</h2>
+      <h3>Paint Lite</h3>
+    </hgroup>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Canvas</h2>
+      <h3>Kinetic JS</h3>
+    </hgroup>
+    <article>
+      <ul>
+        <li>http://kineticjs.com</li>
+        <li>Animationen</li>
+        <li>Sprites</li>
+        <li>Stages &amp; Layer</li>
+        <li>Text an Pfaden</li>
+        <li>erweiterte Primitive</li>
+        <li>Hit Test</li>
+      </ul>
+      <a id="logo" href="http://www.kineticjs.com" style="text-decoration: none"><img src="./images/presentation/kineticjs.png"></a>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Canvas</h2>
+      <h3>Kinetic JS</h3>
+    </hgroup>
+    <article>
+     <iframe seamless="true" data-src="http://www.chranimekorunu.cz/hraj/zavodnici/" width="500" height="300" style="margin-top: -30px"></iframe>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Canvas</h2>
+      <h3>Kinetic Sprites</h3>
+    </hgroup>
+    <article>
+      <img src="./images/presentation/kinetic_blob_sprite.png" alt="blob sprite">
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Canvas</h2>
+      <h3>Kinetic Sprites</h3>
+    </hgroup>
+    <article class="smaller">
+<pre class="prettyprint linenums" data-lang="javascript">
+var stage = new Kinetic.Stage({
+        container: 'container',
+        width: 578,
+        height: 200
+      });
+var layer = new Kinetic.Layer();
+var animations = {
+  idle: [{
+      x: 2,
+      y: 2,
+      width: 70,
+      height: 119
+    }, ... ],
+  punch: [{
+      x: 2,
+      y: 138,
+      width: 74,
+      height: 122
+    }, ...
+    </pre>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Canvas</h2>
+      <h3>Kinetic Sprites</h3>
+    </hgroup>
+    <article class="smaller">
+<pre class="prettyprint linenums" data-lang="javascript">
+var imageObj = new Image();
+imageObj.onload = function() {
+  var blob = new Kinetic.Sprite({
+    x: 250,
+    y: 40,
+    image: imageObj,
+    animation: 'idle',
+    animations: animations,
+    frameRate: 7,
+    index: 0
+  });
+
+  // add the shape to the layer
+  layer.add(blob);
+
+  // add the layer to the stage
+  stage.add(layer);
+
+  // start sprite animation
+  blob.start();
+    </pre>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Canvas</h2>
+      <h3>Kinetic Sprites</h3>
+    </hgroup>
+    <article class="smaller">
+     <iframe seamless="true" data-src="./demos/kinetic_sprite.html" width="500" height="300"></iframe>
+    </article>
+  </slide>
+
+  <slide class="hidden">
+    <hgroup>
+      <h2>Bibliotheken</h2>
+      <h3>Paper JS</h3>
+    </hgroup>
+    <article>
+      <ul>
+        <li>http://paperjs.org/</li>
+        <li>Scenen Graph</li>
+        <li>Maus &amp; Tastatur Interaktion</li>
+        <li>Pfade &amp; Segmente</li>
+        <li>"Vektorgrafik"</li>
+        <li>Hit Testing</li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide class="hidden">
+    <hgroup>
+      <h2>Bibliotheken</h2>
+      <h3>Paper JS</h3>
+    </hgroup>
+    <article class="smaller">
+     <iframe seamless="true" data-src="http://paperjs.org/examples/smoothing" width="500" height="300"></iframe>
+     <div style="position:absolute; left: 80px; bottom: 0px; z-index: 10; background-color: white; width: 200px; height: 500px">
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Ausblick</h2>
+      <h3>3D mit WebGL</h3>
+    </hgroup>
+    <article class="smaller">
+    <p>canvas.getContext("webgl")</p>
+    <iframe seamless="true" data-src="http://threejs.org/examples/webgl_loader_ctm_materials.html" width="500" height="300"></iframe>
+    </article>
+  </slide>
+
+  <slide class="segue dark nobackground">
+    <aside class="gdbar"><img src="images/hpi_logo.png"></aside>
+    <hgroup>
+      <h2>SVG</h2>
+      <h3>Zeichnen mit Vektorgrafiken</h3>
+    </hgroup>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>SVG</h2>
+      <h3>Elemente</h3>
+    </hgroup>
+    <article class="smaller">
+      <pre class="prettyprint" data-lang="svg">
+&lt;<b>svg</b> width="960" height="500" pointer-events="all"&gt;
+  &lt;<b>rect</b> width="960" height="500" fill="lightgrey" class="hitbox"&gt;&lt;/rect&gt;
+  &lt;g&gt;
+    &lt;<b>path</b> class="preview cluster" d="M 576,324 L 647,312 L 759,347 L 810,399 "&gt;&lt;/path&gt;
+    &lt;path class="cluster" d="M 19,20 L 247,312 L 300, 345" style="fill: none; stroke: black; stroke-width: 2px;"&gt;&lt;/path&gt;
+  &lt;/g&gt;
+  &lt;g&gt;
+    &lt;<b>circle</b> cx="100" cy="200" r="50"&gt;&lt;/circle&gt;
+    &lt;circle cx="140" cy="133.7" style="awesome" r="20"&gt;&lt;/circle&gt;
+  &lt;/g&gt;
+  &lt;<b>g</b> class="node"&gt;
+    &lt;<b>foreignObject</b> x="100" y="400" width="68" height="68"&gt;
+      &lt;body&gt;
+        &lt;div class="nodeElement" data-id="0" style="background-color:#1f77b4;height: 64;"&gt;&lt;/div&gt;
+      &lt;/body&gt;
+    &lt;/foreignObject&gt;
+  &lt;/g&gt;
+&lt;/svg&gt;
+      </pre>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>SVG</h2>
+      <h3>Elemente</h3>
+    </hgroup>
+    <article class="smaller">
+      <iframe seamless="true" data-src="./demos/svg_elements.html" width="500" height="300"></iframe>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>SVG</h2>
+      <h3>weitere Elemente</h3>
+    </hgroup>
+    <article class="">
+      <ul>
+        <li>Elipsen</li>
+        <li>Text</li>
+        <li>Gradienten</li>
+        <li>Bilder</li>
+        <li><a href="http://www.w3.org/TR/SVG/">http://www.w3.org/TR/SVG/</a></li>
+        <li><a href="https://developer.mozilla.org/en-US/docs/SVG/Element">https://developer.mozilla.org/en-US/docs/SVG/Element</a></li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>SVG</h2>
+      <h3>DOM Integration - Selektion</h3>
+    </hgroup>
+    <article class="smaller">
+      <pre class="prettyprint" data-lang="svg">
+&lt;svg width="960" height="500"&gt;
+  &lt;g&gt;
+    &lt;circle <b>id="redCircle"</b> cx="150" cy="50" r="50" <b>style="fill: #FF0000"</b>&gt;&lt;/circle&gt;
+    &lt;circle id="blueCircle" cx="250" cy="25" r="20" style="fill: #0BB5FF"&gt;&lt;/circle&gt;
+  &lt;/g&gt;
+&lt;/svg&gt;
+
+&lt;script&gt;
+
+  $("body").on("click", function() {
+
+    <b>var red = document.getElementById("redCircle");
+    alert(red.style.fill);</b>
+
+  });
+&lt;/script&gt;</pre>
+      <iframe seamless="true" data-src="./demos/svg_select.html" width="500" height="300"></iframe>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>SVG</h2>
+      <h3>DOM Integration - Events</h3>
+    </hgroup>
+    <article class="smaller">
+      <pre class="prettyprint" data-lang="svg">
+&lt;svg width="960" height="500"&gt;
+  &lt;g&gt;
+    &lt;circle class="button" cx="100" cy="200" r="50" <b>data-hpi="20"</b>&gt;&lt;/circle&gt;
+    &lt;circle class="button" cx="140" cy="133.7" r="20" <b>data-hpi="30"</b>&gt;&lt;/circle&gt;
+  &lt;/g&gt;
+&lt;/svg&gt;
+
+&lt;script&gt;
+  $(document).ready( function() {
+
+    <b>$(".button").on("click", function(evt)</b>{
+
+      var $this = $(this);
+      <b>var radius = $this.data("hpi");
+      $this.attr("r", radius);</b>
+    })
+  })&lt;/script&gt;</pre>
+      <iframe seamless="true" data-src="./demos/svg_events.html" width="500" height="300"></iframe>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>SVG</h2>
+      <h3>DOM Integration - ForeignObjects</h3>
+    </hgroup>
+    <article class="smaller">
+      <pre class="prettyprint" data-lang="svg">
+&lt;svg&gt;
+  &lt;foreignObject width="960" height="500"&gt;
+    &lt;body xmlns="http://www.w3.org/1999/xhtml"&gt;
+      &lt;iframe src="http://www.html5rocks.com/en/" height="300" width="960"&gt;&lt;/iframe&gt;
+    &lt;/body&gt;
+  &lt;/foreignObject&gt;
+&lt;/svg&gt;</pre>
+      <iframe seamless="true" data-src="./demos/svg_foreignObjects.html" width="500" height="300"></iframe>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>SVG</h2>
+      <h3>Raphaël JS</h3>
+    </hgroup>
+    <article>
+      <ul>
+        <li>http://raphaeljs.com/</li>
+        <li>Cross-browser Abstrahierung</li>
+        <li>Helferfunktionen im Umgang mit SVG</li>
+        <ul>
+           <li>Event Handler</li>
+           <li>Animationen</li>
+           <li>DOM Manipulation</li>
+         </ul>
+        <li>Unterstützung für IE 6/7/8 mittels VML</li>
+      </ul>
+
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>SVG</h2>
+      <h3>Raphaël JS</h3>
+    </hgroup>
+    <article class="smaller">
+      <iframe seamless="true" data-src="http://raphaeljs.com/hand.html" width="500" height="300"></iframe>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>SVG</h2>
+      <h3>D3 JS</h3>
+    </hgroup>
+    <article>
+      <ul>
+        <li>http://d3js.org/</li>
+        <li>data driven documents</li>
+        <li>Datenvisualisierung</li>
+        <li>Layouts</li>
+        <ul>
+          <li>Bubble Charts</li>
+          <li>Voronoi</li>
+          <li>Karten</li>
+        </ul>
+      </ul>
+
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>SVG</h2>
+      <h3>D3 JS</h3>
+    </hgroup>
+    <article class="smaller">
+      <iframe seamless="true" data-src="http://mbostock.github.io/d3/talk/20111116/airports.html" width="600" height="300" style="margin: -50px 0 0 -100px"></iframe>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>SVG</h2>
+      <h3>D3 JS</h3>
+    </hgroup>
+    <article class="smaller">
+      <iframe seamless="true" data-src="http://bl.ocks.org/mbostock/raw/1308257/" width="500" height="300"></iframe>
+    </article>
+  </slide>
+
+  <slide class="segue dark nobackground">
+    <aside class="gdbar"><img src="images/hpi_logo.png"></aside>
+    <hgroup>
+      <h2>Live Hacking</h2>
+      <h3>Paint Lite</h3>
+    </hgroup>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Auswertung</h2>
+    </hgroup>
+    <article>
+      <table>
+        <tr>
+          <th>Canvas</th><th>SVG</th>
+        </tr>
+        <tr>
+          <td style="font-weight: normal">Pixelgrafik</td><td>Vektorgrafik</td>
+        </tr>
+        <tr>
+          <td style="font-weight: normal">Hardwareunterstützung</td><td>Performance geräteabhängig</td>
+        </tr>
+        <tr>
+          <td style="font-weight: normal">Zeichenbefehle</td><td>DOM Elemente</td>
+        </tr>
+        <tr>
+          <td style="font-weight: normal">3D</td><td>CSS Unterstützung</td>
+        </tr>
+        <tr>
+          <td style="font-weight: normal">Pixelmanipulation</td><td>Integration mit anderer Designer Software</td>
+        </tr>
+        <tr>
+          <td style="font-weight: normal">geeignet für Spiele</td><td>geeignet für Visualiserung</td>
+        </tr>
+      </table>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Browser Kompatibilität</h2>
+    </hgroup>
+    <article>
+      <table>
+        <tr>
+          <th></th><th>Chrome</th><th>Safari</th><th>Internet Explorer</th><th>Firefox</th><th>Opera</th><th>iOS</th><th>Android</th>
+        </tr>
+        <tr>
+          <td>SVG</td><td>4+</td><td>3.1+</td><td>9.0+</td><td>2.0+</td><td>9.0+</td><td>3.2+</td><td>3.0+</td>
+        </tr>
+        <tr>
+          <td>Canvas</td><td>4+</td><td>3.1+</td><td>9.0+</td><td>2.0+</td><td>9.0+</td><td>3.2+</td><td>2.1+</td>
+        </tr>
+      </table>
+    </article>
+  </slide>
+
+
+  <slide class="thank-you-slide segue nobackground">
+    <aside class="gdbar right"><img src="images/hpi_logo.png"></aside>
+    <article class="flexbox vleft auto-fadein">
+      <h2>&lt;Danke!&gt;</h2>
+    </article>
+    <p class="auto-fadein" data-config-contact>
+      <!-- populated from slide_config.json -->
+    </p>
+  </slide>
+
+ <slide>
+    <hgroup>
+      <h2>Quellen</h2>
+    </hgroup>
+    <article class="smaller">
+      <ul>
+        <li><a href="https://developer.mozilla.org/en-US/docs/HTML/Canvas">
+          https://developer.mozilla.org/en-US/docs/HTML/Canvas</a></li>
+        <li><a href="https://developer.mozilla.org/en-US/docs/SVG">
+          https://developer.mozilla.org/en-US/docs/SVG</a></li>
+        <li><a href="http://www.w3.org/TR/SVG/">
+          http://www.w3.org/TR/SVG/</a></li>
+        <li><a href="http://www.html5rocks.com/en/">
+          http://www.html5rocks.com/en/</a></li>
+        <li><a href="http://www.w3.org/html/logo/">
+          http://www.w3.org/html/logo/</a></li>
+        <li><a href="http://paperjs.org/">
+          http://paperjs.org/</a></li>
+        <li><a href="http://d3js.org/">
+          http://d3js.org/</a></li>
+        <li><a href="http://raphaeljs.com/">
+          http://raphaeljs.com/</a></li>
+        <li><a href="http://kineticjs.com/">
+          http://kineticjs.com/</a></li>
+        <li><a href="http://www.html5canvastutorials.com/kineticjs/html5-canvas-kineticjs-sprite-tutorial/">
+          http://www.html5canvastutorials.com/kineticjs/html5-canvas-kineticjs-sprite-tutorial/</a></li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide class="backdrop"></slide>
+
+</slides>
+
+
+<!--[if IE]>
+  <script src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js"></script>
+  <script>CFInstall.check({mode: 'overlay'});</script>
+<![endif]-->
+</body>
+</html>

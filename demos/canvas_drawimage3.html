@@ -1,0 +1,15 @@
+<html>
+  <body style="text-align:center">
+    <canvas id="myCanvas" width="400" height="300"></canvas>
+  </body>
+  <script type="text/javascript">
+  var ctx = document.getElementById('myCanvas').getContext('2d');
+
+  var img = new Image();
+  img.onload = function(){
+    ctx.drawImage(img,120,0, 100, 200, 120, 0, 100, 200);
+  };
+
+  img.src = '../images/presentation/html5rocks.png';
+  </script>
+</html>

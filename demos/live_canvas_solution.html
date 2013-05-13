@@ -1,0 +1,38 @@
+<html>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+  <body>
+    <canvas id="myCanvas" width="600" height="600"></canvas>
+
+    <script type="text/javascript">
+
+      $canvas = $("#myCanvas");
+      context = $canvas[0].getContext("2d");
+
+      context.strokeStyle = "#000000";
+      context.lineWidth = 5;
+
+      var paint = function(evt) {
+
+        context.lineTo(evt.clientX, evt.clientY);
+        context.stroke()
+
+      }
+
+      $canvas.on("mousedown", function(evt) {
+
+        context.beginPath();
+        context.moveTo(evt.clientX, evt.clientY);
+
+        $canvas.on("mousemove", paint);
+
+      });
+
+      $canvas.on("mouseup", function() {
+
+        $canvas.off("mousemove",paint);
+
+      });
+
+    </script>
+  </body>
+</html>
